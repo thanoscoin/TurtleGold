@@ -19,9 +19,9 @@ namespace parameters {
 
 const uint64_t DIFFICULTY_TARGET                             = 25; // seconds
 const uint64_t DIFFICULTY_TARGET_V2                          = 25; // seconds
-
+  
 /* Height to swap to DIFFICULTY_TARGET_V2 */
-const uint64_t DIFFICULTY_TARGET_V2_HEIGHT                   = 500000;
+const uint64_t DIFFICULTY_TARGET_V2_HEIGHT                   = 1000000;
 
 const uint32_t CRYPTONOTE_MAX_BLOCK_NUMBER                   = 500000000;
 const size_t   CRYPTONOTE_MAX_BLOCK_BLOB_SIZE                = 500000000;
@@ -37,35 +37,39 @@ const uint64_t MONEY_SUPPLY                                  = UINT64_C(10000000
 
 const uint32_t EMISSION_SPEED_FACTOR                         = 23;
 const uint32_t EMISSION_SPEED_FACTOR_V2                      = 24;
-
+const uint32_t EMISSION_SPEED_FACTOR_V3                      = 25;
+const uint32_t EMISSION_SPEED_FACTOR_V4                      = 26;
+const uint32_t EMISSION_SPEED_FACTOR_V5                      = 27;
+const uint32_t EMISSION_SPEED_FACTOR_V6                      = 28;
+  
 static_assert(EMISSION_SPEED_FACTOR    <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
 static_assert(EMISSION_SPEED_FACTOR_V2 <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
-
+static_assert(EMISSION_SPEED_FACTOR_V3 <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
+static_assert(EMISSION_SPEED_FACTOR_V4 <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
+static_assert(EMISSION_SPEED_FACTOR_V5 <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
+static_assert(EMISSION_SPEED_FACTOR_V6 <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
+ 
 /* Height to swap to EMISSION_SPEED_FACTOR_V2 */
-const uint64_t EMISSION_SPEED_FACTOR_V2_HEIGHT               = 500000;
-
+const uint64_t EMISSION_SPEED_FACTOR_V2_HEIGHT               = 1000000;
+const uint64_t EMISSION_SPEED_FACTOR_V3_HEIGHT               = 2000000;
+const uint64_t EMISSION_SPEED_FACTOR_V4_HEIGHT               = 3000000;
+const uint64_t EMISSION_SPEED_FACTOR_V5_HEIGHT               = 4000000;
+const uint64_t EMISSION_SPEED_FACTOR_V6_HEIGHT               = 5000000;
+  
 /* Premine amount */
 const uint64_t GENESIS_BLOCK_REWARD                          = UINT64_C(0);
 
 /* How to generate a premine:
-
 * Compile your code
-
 * Run zedwallet, ignore that it can't connect to the daemon, and generate an
   address. Save this and the keys somewhere safe.
-
 * Launch the daemon with these arguments:
 --print-genesis-tx --genesis-block-reward-address <premine wallet address>
-
 For example:
 TurtleGoldd --print-genesis-tx --genesis-block-reward-address 
-
 * Take the hash printed, and replace it with the hash below in GENESIS_COINBASE_TX_HEX
-
 * Recompile, setup your seed nodes, and start mining
-
 * You should see your premine appear in the previously generated wallet.
-
 */
 const char     GENESIS_COINBASE_TX_HEX[]                     = "017801ff00010002a40e83f44198285b3036a7ccef7ff155375b34c7cc8552ceea8721aefa8229752101aaad54aade16d9a4542e0efb3fdf32d86daadc16f1c07f1e363dd0e152a81def";
 static_assert(sizeof(GENESIS_COINBASE_TX_HEX)/sizeof(*GENESIS_COINBASE_TX_HEX) != 1, "GENESIS_COINBASE_TX_HEX must not be empty.");
@@ -137,10 +141,11 @@ static_assert(UPGRADE_VOTING_WINDOW > 1, "Bad UPGRADE_VOTING_WINDOW");
 /* Block heights we are going to have hard forks at */
 const uint64_t FORK_HEIGHTS[] =
 {
-    500000,
+    1000000,
     2000000,
+    3000000,
+    4000000,
     5000000,
-    10000000,
 };
 
 /* MAKE SURE TO UPDATE THIS VALUE WITH EVERY MAJOR RELEASE BEFORE A FORK */
@@ -151,7 +156,6 @@ const uint64_t FORK_HEIGHTS_SIZE = sizeof(FORK_HEIGHTS) / sizeof(*FORK_HEIGHTS);
 /* The index in the FORK_HEIGHTS array that this version of the software will
    support. For example, if CURRENT_FORK_INDEX is 3, this version of the
    software will support the fork at 600,000 blocks.
-
    This will default to zero if the FORK_HEIGHTS array is empty, so you don't
    need to change it manually. */
 const uint8_t CURRENT_FORK_INDEX = FORK_HEIGHTS_SIZE == 0 ? 0 : SOFTWARE_SUPPORTED_FORK_INDEX;
