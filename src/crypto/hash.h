@@ -31,6 +31,11 @@
 #define CN_TURTLE_SCRATCHPAD            262144
 #define CN_TURTLE_ITERATIONS            131072
 
+// Standard CryptoNight Gold
+#define CN_GOLD_PAGE_SIZE               131072 // half of cn_trtl's to make arm devices more profitable
+#define CN_GOLD_SCRATCHPAD              131072 // half of cn_trtl's to make arm devices more profitable
+#define CN_GOLD_ITERATIONS              98304  // 3/4 of cn_trtl's 
+
 // CryptoNight Soft Shell Definitions
 #define CN_SOFT_SHELL_MEMORY            262144 // This defines the lowest memory utilization for our curve
 #define CN_SOFT_SHELL_WINDOW            2048 // This defines how many blocks we cycle through as part of our algo sine wave
@@ -195,5 +200,18 @@ namespace Crypto {
 
   inline void tree_hash_from_branch(const Hash *branch, size_t depth, const Hash &leaf, const void *path, Hash &root_hash) {
     tree_hash_from_branch(reinterpret_cast<const char (*)[HASH_SIZE]>(branch), depth, reinterpret_cast<const char *>(&leaf), path, reinterpret_cast<char *>(&root_hash));
+  }
+
+// Standard CryptoNight Gold
+  inline void cn_gold_slow_hash_v0(const void *data, size_t length, Hash &hash) {
+    cn_slow_hash(data, length, reinterpret_cast<char *>(&hash), 0, 0, 0, CN_GOLD_PAGE_SIZE, CN_GOLD_SCRATCHPAD, CN_GOLD_ITERATIONS);
+  }
+
+  inline void cn_gold_slow_hash_v1(const void *data, size_t length, Hash &hash) {
+    cn_slow_hash(data, length, reinterpret_cast<char *>(&hash), 0, 1, 0, CN_GOLD_PAGE_SIZE, CN_GOLD_SCRATCHPAD, CN_GOLD_ITERATIONS);
+  }
+
+  inline void cn_gold_slow_hash_v2(const void *data, size_t length, Hash &hash) {
+    cn_slow_hash(data, length, reinterpret_cast<char *>(&hash), 0, 2, 0, CN_GOLD_PAGE_SIZE, CN_GOLD_SCRATCHPAD, CN_GOLD_ITERATIONS);
   }
 }
