@@ -225,7 +225,6 @@ const static   boost::uuids::uuid CRYPTONOTE_NETWORK         =
 
 const char* const SEED_NODES[] = {
     "5.172.219.174:42068", //sniperviperman
-    "18.221.128.115:42068", //ifernandez
-    "104.238.165.159:42068", //Leo Cornelius
+    "18.221.128.115:42068" //ifernandez
 };
 } // CryptoNote
