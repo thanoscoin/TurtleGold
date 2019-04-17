@@ -50,9 +50,9 @@ const std::string CN_TURTLE_LITE_SLOW_HASH_V0 = "5e1891a15d5d85c09baf4a3bbe33675
 const std::string CN_TURTLE_LITE_SLOW_HASH_V1 = "ae7f864a7a2f2b07dcef253581e60a014972b9655a152341cb989164761c180a";
 const std::string CN_TURTLE_LITE_SLOW_HASH_V2 = "b2172ec9466e1aee70ec8572a14c233ee354582bcb93f869d429744de5726a26";
 
-const std::string CN_GOLD_SLOW_HASH_V0 = "7d853956688f08c5d5b52b0b619107e596b01e1e2a17842ec82c9371935055ca";
-const std::string CN_GOLD_SLOW_HASH_V1 = "ad90ad77445684e2266904460e4e26b4829c1f2bca572b2b617a4bbc6a1206a0";
-const std::string CN_GOLD_SLOW_HASH_V2 = "d43bb64ea56a2132c3a6552ace8bbe09ac23eed4be645f0e3bcad901966a9a37";
+const std::string CN_GOLD_SLOW_HASH_V0 = "d990810bb5c85306eda99579829b2b8dd61ca364344fd0f17527d29660a7da18";
+const std::string CN_GOLD_SLOW_HASH_V1 = "07a9c14e9033ca90d6f2a3d5894a610cd1c43f476234bce52c9ff0c74fbc3a6e";
+const std::string CN_GOLD_SLOW_HASH_V2 = "78a19f55206dc8451bb6cf82b15b407c43eae1abfc9a3ce6493c5f493cb417ef";
 
 const std::string CN_SOFT_SHELL_V0[] = {
   "5e1891a15d5d85c09baf4a3bbe33675cfa3f77229c8ad66c01779e590528d6d3",
@@ -320,7 +320,7 @@ int main(int argc, char** argv)
         TEST_HASH_FUNCTION(cn_slow_hash_v0, CN_SLOW_HASH_V0);
         TEST_HASH_FUNCTION(cn_slow_hash_v1, CN_SLOW_HASH_V1);
         TEST_HASH_FUNCTION(cn_slow_hash_v2, CN_SLOW_HASH_V2);
-        
+
         std::cout << std::endl;
 
         TEST_HASH_FUNCTION(cn_lite_slow_hash_v0, CN_LITE_SLOW_HASH_V0);
@@ -338,7 +338,7 @@ int main(int argc, char** argv)
         TEST_HASH_FUNCTION(cn_dark_lite_slow_hash_v0, CN_DARK_LITE_SLOW_HASH_V0);
         TEST_HASH_FUNCTION(cn_dark_lite_slow_hash_v1, CN_DARK_LITE_SLOW_HASH_V1);
         TEST_HASH_FUNCTION(cn_dark_lite_slow_hash_v2, CN_DARK_LITE_SLOW_HASH_V2);
-        
+
         std::cout << std::endl;
 
         TEST_HASH_FUNCTION(cn_turtle_slow_hash_v0, CN_TURTLE_SLOW_HASH_V0);
