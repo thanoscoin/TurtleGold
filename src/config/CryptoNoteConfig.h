@@ -142,7 +142,7 @@ const uint64_t FORK_HEIGHTS_SIZE = sizeof(FORK_HEIGHTS) / sizeof(*FORK_HEIGHTS);
 
 /* The index in the FORK_HEIGHTS array that this version of the software will
    support. For example, if CURRENT_FORK_INDEX is 3, this version of the
-   software will support the forks at 100,000 and 1,000,000 blocks.
+   software will support the fork at block height 1,000,000.
    This will default to zero if the FORK_HEIGHTS array is empty, so you don't
    need to change it manually. */
 const uint8_t CURRENT_FORK_INDEX = FORK_HEIGHTS_SIZE == 0 ? 0 : SOFTWARE_SUPPORTED_FORK_INDEX;

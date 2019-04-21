@@ -181,7 +181,6 @@ private:
   uint32_t m_upgradeHeightV3;
   uint32_t m_upgradeHeightV4;
   uint32_t m_upgradeHeightV5;
-  uint32_t m_upgradeHeightV6;
   unsigned int m_upgradeVotingThreshold;
   uint32_t m_upgradeVotingWindow;
   uint32_t m_upgradeWindow;
