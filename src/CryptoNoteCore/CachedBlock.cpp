@@ -67,8 +67,6 @@ const Crypto::Hash& CachedBlock::getBlockLongHash() const {
     } else if (block.majorVersion >= BLOCK_MAJOR_VERSION_6) {
       const auto& rawHashingBlock = getParentBlockHashingBinaryArray(true);
       blockLongHash = Hash();
-      cn_gold_slow_hash_v0(rawHashingBlock.data(), rawHashingBlock.size(), blockLongHash.get());
-    } else {
       throw std::runtime_error("Unknown block major version.");
     }
   }
