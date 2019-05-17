@@ -17,8 +17,8 @@
 namespace CryptoNote {
 namespace parameters {
 
-const uint64_t DIFFICULTY_TARGET                             = 25; // seconds
-const uint64_t DIFFICULTY_TARGET_V2                          = 25; // seconds
+const uint64_t DIFFICULTY_TARGET                             = 30; // seconds
+const uint64_t DIFFICULTY_TARGET_V2                          = 30; // seconds
   
 /* Height to swap to DIFFICULTY_TARGET_V2 */
 const uint64_t DIFFICULTY_TARGET_V2_HEIGHT                   = 1000000;
@@ -33,7 +33,7 @@ const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT            = 6 * DIFFICULTY_TA
 const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW             = 11;
 
 // MONEY_SUPPLY - total number coins to be generated
-const uint64_t MONEY_SUPPLY                                  = UINT64_C(10000000000000000);
+const uint64_t MONEY_SUPPLY                                  = UINT64_C(1000000000000000);
 
 const uint32_t EMISSION_SPEED_FACTOR                         = 23;
 const uint32_t EMISSION_SPEED_FACTOR_V2                      = 24;
@@ -158,7 +158,7 @@ const char     P2P_NET_DATA_FILENAME[]                       = "p2pstate.bin";
 const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json";
 } // parameters
 
-const char     CRYPTONOTE_NAME[]                             = "TurtleGold";
+const char     CRYPTONOTE_NAME[]                             = "Thanoscoin";
 
 const uint8_t  TRANSACTION_VERSION_1                         =  1;
 const uint8_t  TRANSACTION_VERSION_2                         =  2;
@@ -177,8 +177,8 @@ const size_t   BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT        =  10000;  //by def
 const uint64_t BLOCKS_SYNCHRONIZING_DEFAULT_COUNT            =  100;    //by default, blocks count in blocks downloading
 const size_t   COMMAND_RPC_GET_BLOCKS_FAST_MAX_COUNT         =  1000;
 
-const int      P2P_DEFAULT_PORT                              =  42068;
-const int      RPC_DEFAULT_PORT                              =  42061;
+const int      P2P_DEFAULT_PORT                              =  6060;
+const int      RPC_DEFAULT_PORT                              =  6161;
 const int      SERVICE_DEFAULT_PORT                          =  1337;
 
 const size_t   P2P_LOCAL_WHITE_PEERLIST_LIMIT                =  1000;
@@ -213,15 +213,14 @@ const uint64_t DATABASE_READ_BUFFER_MB_DEFAULT_SIZE          = 10;
 const uint32_t DATABASE_DEFAULT_MAX_OPEN_FILES               = 100;
 const uint16_t DATABASE_DEFAULT_BACKGROUND_THREADS_COUNT     = 2;
 
-const char     LATEST_VERSION_URL[]                          = "https://github.com/turtlegold/TurtleGold/releases";
-const std::string LICENSE_URL                                = "https://github.com/turtlegold/TurtleGold/blob/master/LICENSE";
+const char     LATEST_VERSION_URL[]                          = "https://github.com/thanoscoin/thanoscoin/releases";
+const std::string LICENSE_URL                                = "https://github.com/thanoscoin/thanoscoin/blob/master/LICENSE";
 const static   boost::uuids::uuid CRYPTONOTE_NETWORK         =
 {
-    {  0xb5, 0x0c, 0x4a, 0x6c, 0xcf, 0x52, 0x57, 0x41, 0x65, 0xf9, 0x91, 0xa4, 0xb6, 0xc1, 0x43, 0xe9  }
+    {  0xb4, 0x9c, 0x4b, 0x5d, 0xif, 0x92, 0x59, 0x21, 0x15, 0xg8, 0x67, 0xb4, 0xk6, 0xu8, 0x73, 0xf9  }
 };
 
 const char* const SEED_NODES[] = {
     "5.172.219.174:42068", //sniperviperman
-    "18.221.128.115:42068" //ifernandez
 };
 } // CryptoNote
